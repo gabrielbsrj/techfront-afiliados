@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import { ArrowLeft, RotateCcw } from "lucide-react";
 import AdSenseWidget from "@/components/AdSenseWidget";
-import MLDynamicWidget from "@/components/MLDynamicWidget";
+import MLProductGrid from "@/components/MLProductGrid";
 
 const phrases = {
   es: [
@@ -162,9 +162,13 @@ export default function TypingTest() {
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
-          <div className="glass-panel" style={{ padding: "1.5rem", textAlign: "center" }}>
-            <h3 style={{ marginBottom: "1rem", fontSize: "1.1rem" }}>{t.equip}</h3>
-            <MLDynamicWidget />
+          <div className="glass-panel" style={{ padding: "1.5rem" }}>
+            <MLProductGrid 
+              searchQuery="teclado mouse gamer" 
+              siteId="MLB"
+              limit={4} 
+              title={t.equip + " 🔥"} 
+            />
           </div>
           <div className="glass-panel" style={{ padding: "1.5rem", flex: 1, display: "flex", alignItems: "center", justifyContent: "center" }}>
             <div style={{ width: "100%" }}>

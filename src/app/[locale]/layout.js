@@ -5,6 +5,7 @@ import JsonLd from "@/components/JsonLd";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { locales } from "@/i18n/config";
 import { getDictionary } from "@/i18n/config";
+import Script from "next/script";
 
 export async function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -39,6 +40,12 @@ export default async function LocaleLayout({ children, params }) {
         <JsonLd data={websiteJsonLd} />
       </head>
       <body suppressHydrationWarning>
+        <Script 
+          async 
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9128096848918189" 
+          crossOrigin="anonymous" 
+          strategy="afterInteractive" 
+        />
         <ThemeProvider>
           <div className="page-wrapper">
             <Header locale={locale} dict={dict} />

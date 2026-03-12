@@ -3,9 +3,9 @@
 import Script from "next/script";
 import { useEffect } from "react";
 
-export default function AdSenseWidget({ defaultSlot = "SEU_SLOT_DE_ANUNCIO" }) {
-  // O cliente (usuário) deverá colocar o ID correto do AdSense dele depois.
-  const adClientId = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID || "ca-pub-XXXXXXXXXXXXXXXX";
+export default function AdSenseWidget({ defaultSlot = "8668478950" }) {
+  // O ID do AdSense oficial para RebekaClaw
+  const adClientId = "ca-pub-9128096848918189";
 
   useEffect(() => {
     try {

@@ -34,23 +34,23 @@ export default function MLDynamicWidget({ scriptUrl, scriptId }) {
     };
   }, [scriptUrl, scriptId]);
 
-  // Se o usuário não passou o script ainda, mostramos um banner falso bem realista para compor o Layout
+  // Se o usuário não passou o script ainda, mostramos um banner substituto bonito
   if (!scriptUrl) {
     return (
       <div style={{ margin: "2rem 0", width: "100%", display: "flex", justifyContent: "center" }}>
         <a 
-            href="https://mercadolivre.cl" 
+            href="https://lista.mercadolivre.com.br/teclado-mouse-gamer" 
             target="_blank" 
             rel="noopener noreferrer"
-            style={{ display: "block", borderRadius: "8px", overflow: "hidden", border: "1px solid var(--card-border)" }}
+            style={{ display: "block", borderRadius: "8px", overflow: "hidden", border: "1px solid var(--card-border)", position: "relative" }}
         >
             <img 
-              src="https://http2.mlstatic.com/storage/splinter-admin/o:f_webp,q_auto:best/1711648013915-home-slider_desktop.jpg" 
-              alt="Mercado Livre Promoções" 
-              style={{ width: "100%", maxWidth: "800px", height: "auto", display: "block" }} 
+              src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?auto=format&fit=crop&w=800&q=80" 
+              alt="Produtividade Tech - Ofertas Mercado Livre" 
+              style={{ width: "100%", maxWidth: "800px", height: "auto", display: "block", filter: "brightness(0.85)" }} 
             />
-            <div style={{ padding: "0.5rem", background: "rgba(255, 230, 0, 0.1)", color: "var(--text-muted)", fontSize: "0.8rem", textAlign: "center" }}>
-              [Demonstração] Adicione seu script do Mercado Livre Afiliados aqui.
+            <div style={{ position: "absolute", bottom: 0, width: "100%", padding: "1rem", background: "linear-gradient(transparent, rgba(0,0,0,0.8))", color: "#fff", textAlign: "center", fontWeight: "bold" }}>
+              🛒 Descubra os Melhores Periféricos no Mercado Livre
             </div>
         </a>
       </div>

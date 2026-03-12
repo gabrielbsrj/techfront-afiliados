@@ -1,5 +1,7 @@
+export const dynamic = 'force-static';
+
 export default function robots() {
-  const baseUrl = 'https://sua-url-aqui.com'; // Substituir pelo domínio final
+  const baseUrl = 'https://www.rebekaclaw.com';
 
   return {
     rules: {

@@ -1,13 +1,19 @@
-export default function sitemap() {
-  const baseUrl = 'https://sua-url-aqui.com'; // O usuário trocará para o domínio dele
+export const dynamic = 'force-static';
 
-  // Em um app real, buscaríamos as URLs do CMS/Banco de dados
+export default function sitemap() {
+  const baseUrl = 'https://www.rebekaclaw.com';
+
   const routes = [
     '',
-    '/futuro-da-ia',
-    '/produtividade',
-    '/reviews',
-    '/reviews/melhor-mouse-produtividade-ia',
+    '/es',
+    '/en',
+    '/pt',
+    '/es/teste-digitacao',
+    '/en/teste-digitacao',
+    '/pt/teste-digitacao',
+    '/es/artigos/ia-revolucao-silenciosa-futuro-trabalho',
+    '/en/artigos/ia-revolucao-silenciosa-futuro-trabalho',
+    '/pt/artigos/ia-revolucao-silenciosa-futuro-trabalho',
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString(),

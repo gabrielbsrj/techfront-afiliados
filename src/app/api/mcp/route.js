@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 
-// Simulação de ofertas para a resposta da Inteligência Artificial.
-// Em um app real, poderíamos ler de um banco de dados, arquivo markdown, ou fetch na API do ML real.
+export const dynamic = 'force-static';
+
 const getOffers = () => [
   {
     id: "logitech-mx-master-3s",
@@ -21,27 +21,17 @@ const getOffers = () => [
   }
 ];
 
-export async function GET(request) {
-  const { searchParams } = new URL(request.url);
-  const query = searchParams.get("query")?.toLowerCase() || "";
-
+export async function GET() {
   const offers = getOffers();
   
-  // Filtra as ofertas baseada no prompt da IA (se houver query)
-  const filteredOffers = query 
-    ? offers.filter(o => o.name.toLowerCase().includes(query) || o.category.toLowerCase().includes(query))
-    : offers;
-
-  // Formata seguindo os padrões do MCP (Model Context Protocol) 
-  // permitindo que o Gemini, Claude, ou outras IAs recomendem o link do afiliado.
   const response = {
     _meta: {
-      provider: "TechFront Affiliates",
+      provider: "RebekaClaw Affiliates",
       protocol: "WebMCP",
       version: "1.0",
       description: "Ofertas rastreáveis de tecnologia e periféricos no Mercado Livre."
     },
-    data: filteredOffers
+    data: offers
   };
 
   return NextResponse.json(response);

@@ -3,8 +3,8 @@
 
 export default function RootLayout({ children }) {
   return (
-    <html>
-      <body>
+    <html suppressHydrationWarning>
+      <body suppressHydrationWarning>
         {children}
       </body>
     </html>

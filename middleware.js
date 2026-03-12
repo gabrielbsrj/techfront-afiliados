@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
-import { locales, defaultLocale } from "./src/i18n/config";
 
+const locales = ["es", "en", "pt"];
+const defaultLocale = "es";
 export function middleware(request) {
   const { pathname } = request.nextUrl;
 

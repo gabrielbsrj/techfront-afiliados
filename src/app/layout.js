@@ -1,6 +1,12 @@
-// Root layout simplificado — apenas passa para [locale]/layout.js
-// Não renderiza Header/Footer aqui (são handled pelo layout do locale)
+// Root layout obrigatório para o Next.js inicializar corretamente
+// A linguagem e o Header/Footer são gerenciados pelo app/[locale]/layout.js
 
 export default function RootLayout({ children }) {
-  return children;
+  return (
+    <html>
+      <body>
+        {children}
+      </body>
+    </html>
+  );
 }

@@ -37,7 +37,7 @@ export default function MLProductGrid({
         const encodedQuery = encodeURIComponent(searchQuery);
         // Usa a API pública do Mercado Livre (sem autenticação para buscas simples)
         const res = await fetch(
-          `https://api.mercadolibre.com/sites/${siteId}/search?q=${encodedQuery}&limit=${limit}`
+          `https://api.mercadolibre.com/sites/${activeSiteId}/search?q=${encodedQuery}&limit=${limit}`
         );
         if (!res.ok) throw new Error("Erro ao buscar produtos");
         const data = await res.json();
@@ -50,7 +50,7 @@ export default function MLProductGrid({
     };
 
     fetchProducts();
-  }, [searchQuery, siteId, limit]);
+  }, [searchQuery, activeSiteId, limit]);
 
   if (loading) {
     return (

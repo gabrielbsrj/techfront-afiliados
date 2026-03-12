@@ -1,0 +1,66 @@
+{
+  "site": {
+    "name": "RebekaClaw",
+    "description": "Descubra como a Inteligência Artificial está revolucionando a forma de trabalhar e encontre os melhores equipamentos tecnológicos."
+  },
+  "nav": {
+    "futureAI": "O Futuro da IA",
+    "productivity": "Produtividade",
+    "reviews": "Reviews",
+    "typingTest": "Teste WPM ⌨️",
+    "darkMode": "Modo Escuro",
+    "lightMode": "Modo Claro"
+  },
+  "hero": {
+    "title1": "A Inteligência Artificial já mudou",
+    "title2": "a forma de trabalhar.",
+    "subtitle": "As ferramentas certas podem aumentar sua produtividade em 10x. Descubra guias, reviews de equipamentos e como usar IA a seu favor.",
+    "cta": "Começar por aqui"
+  },
+  "topics": {
+    "title": "Explore nossos",
+    "highlight": "Tópicos",
+    "ai": {
+      "title": "Futuro da IA",
+      "desc": "Entenda como LLMs, Agentes Autônomos e IA Generativa estão reformulando carreiras e indústrias inteiras.",
+      "cta": "Ler artigos"
+    },
+    "productivity": {
+      "title": "Produtividade",
+      "desc": "Ferramentas de automação, prompts avançados e fluxos de trabalho que poupam horas do seu dia.",
+      "cta": "Ser Produtivo"
+    },
+    "reviews": {
+      "title": "Reviews Setup",
+      "desc": "Os melhores notebooks para IA, teclados ergonômicos e acessórios cruciais (Achados do Mercado Livre).",
+      "cta": "Ver Equipamentos"
+    }
+  },
+  "products": {
+    "title": "🛒 Ofertas do Mercado Livre para potencializar seu trabalho",
+    "loading": "Buscando as melhores ofertas...",
+    "error": "Não foi possível carregar os produtos neste momento.",
+    "recommended": "Produtos Recomendados 🔥",
+    "viewOffer": "Ver oferta",
+    "freeShipping": "Frete grátis"
+  },
+  "typing": {
+    "title": "Teste de",
+    "highlight": "Digitação Tech",
+    "subtitle": "Aumente sua produtividade treinando as mãos (e seu cérebro) lendo sobre IA e Tecnologia.",
+    "time": "Tempo",
+    "accuracy": "Precisão",
+    "placeholder": "Comece a digitar o texto acima aqui...",
+    "finished": "Teste finalizado!",
+    "tryAgain": "Tentar novamente",
+    "equipTitle": "Equipamentos para Digitar Mais Rápido",
+    "equipDesc": "Os teclados de perfil baixo e mecânicos ajudam na agilidade dos dedos."
+  },
+  "footer": {
+    "tagline": "Sua fonte definitiva sobre Inteligência Artificial, o futuro do trabalho e como se preparar para o que está por vir.",
+    "nav": "Navegação",
+    "about": "Sobre Nós",
+    "copyright": "Todos os direitos reservados. Parte de nosso conteúdo pode conter links de afiliados do Mercado Livre."
+  },
+  "back": "Voltar para a Home"
+}

@@ -6,33 +6,39 @@ import ScrollRevealImage from "@/components/ScrollRevealImage";
 import JsonLd from "@/components/JsonLd";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import { getDictionary } from "@/i18n/config";
+import { locales } from "@/i18n/config";
 
 export async function generateStaticParams() {
   const posts = getAllPosts();
-  return posts.map((post) => ({
-    slug: post.slug,
-  }));
+  const params = [];
+  for (const locale of locales) {
+    for (const post of posts) {
+      params.push({ locale, slug: post.slug });
+    }
+  }
+  return params;
 }
 
 export async function generateMetadata({ params }) {
-  const resolveParams = await params;
-  const { meta } = getPostBySlug(resolveParams.slug);
+  const { locale, slug } = await params;
+  const { meta } = getPostBySlug(slug);
   return {
-    title: `${meta.title} | TechFront`,
+    title: `${meta.title} | RebekaClaw`,
     description: meta.description,
   };
 }
 
-// Componentes que podemos usar de forma genérica DENTRO do arquivo Markdown (MDX)
 const components = {
   AdSenseWidget,
   ProductShowcase,
-  ScrollRevealImage
+  ScrollRevealImage,
 };
 
 export default async function BlogPost({ params }) {
-  const resolveParams = await params;
-  const { slug, meta, content } = getPostBySlug(resolveParams.slug);
+  const { locale, slug } = await params;
+  const { meta, content } = getPostBySlug(slug);
+  const dict = await getDictionary(locale);
 
   const articleLd = {
     "@context": "https://schema.org",
@@ -40,8 +46,8 @@ export default async function BlogPost({ params }) {
     headline: meta.title,
     description: meta.description,
     author: {
-      "@type": "Organization",
-      name: "TechFront",
+      "@type": "Person",
+      name: meta.author || "RebekaClaw",
     },
     datePublished: meta.date,
   };
@@ -50,29 +56,24 @@ export default async function BlogPost({ params }) {
     <article className="container" style={{ padding: "4rem 1.5rem", maxWidth: "800px" }}>
       <JsonLd data={articleLd} />
       
-      <Link href="/" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", color: "var(--primary)", marginBottom: "2rem", fontWeight: "500" }}>
-        <ArrowLeft size={16} /> Voltar para a Home
+      <Link href={`/${locale}`} style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", color: "var(--primary)", marginBottom: "2rem", fontWeight: "500" }}>
+        <ArrowLeft size={16} /> {dict.back}
       </Link>
       
       <header style={{ marginBottom: "3rem" }}>
         <h1 style={{ fontSize: "2.5rem", marginBottom: "1rem", lineHeight: "1.2" }}>
           {meta.title}
         </h1>
-        <div style={{ display: "flex", gap: "1rem", color: "var(--text-muted)", fontSize: "0.9rem" }}>
+        <div style={{ display: "flex", gap: "1rem", color: "var(--text-muted)", fontSize: "0.9rem", flexWrap: "wrap" }}>
           <span>{meta.date}</span>
-          <span>•</span>
-          <span>Escrito pela Redação Tech</span>
+          {meta.author && <><span>•</span><span>{meta.author}</span></>}
+          {meta.readTime && <><span>•</span><span>{meta.readTime}</span></>}
         </div>
       </header>
 
-      {/* Conteúdo Renderizado pelo MDX (Aceita Tags React e CSS Puro) */}
-      <div 
-        className="prose" 
-        style={{ fontSize: "1.1rem", lineHeight: "1.8", color: "var(--foreground)" }}
-      >
+      <div className="prose" style={{ fontSize: "1.1rem", lineHeight: "1.8", color: "var(--foreground)" }}>
         <MDXRemote source={content} components={components} />
       </div>
-
     </article>
   );
 }

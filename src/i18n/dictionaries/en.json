@@ -1,0 +1,66 @@
+{
+  "site": {
+    "name": "RebekaClaw",
+    "description": "Discover how Artificial Intelligence is revolutionizing the way we work and find the best tech equipment."
+  },
+  "nav": {
+    "futureAI": "Future of AI",
+    "productivity": "Productivity",
+    "reviews": "Reviews",
+    "typingTest": "WPM Test ⌨️",
+    "darkMode": "Dark Mode",
+    "lightMode": "Light Mode"
+  },
+  "hero": {
+    "title1": "Artificial Intelligence has already changed",
+    "title2": "the way we work.",
+    "subtitle": "The right tools can boost your productivity by 10x. Discover guides, equipment reviews, and how to use AI in your favor.",
+    "cta": "Start here"
+  },
+  "topics": {
+    "title": "Explore our",
+    "highlight": "Topics",
+    "ai": {
+      "title": "Future of AI",
+      "desc": "Understand how LLMs, Autonomous Agents, and Generative AI are reshaping careers and entire industries.",
+      "cta": "Read articles"
+    },
+    "productivity": {
+      "title": "Productivity",
+      "desc": "Automation tools, advanced prompts, and workflows that save hours of your day.",
+      "cta": "Be Productive"
+    },
+    "reviews": {
+      "title": "Setup Reviews",
+      "desc": "The best notebooks for AI, ergonomic keyboards, and crucial accessories (Mercado Libre Deals).",
+      "cta": "See Equipment"
+    }
+  },
+  "products": {
+    "title": "🛒 Mercado Libre deals to boost your work",
+    "loading": "Searching the best deals...",
+    "error": "Could not load products at this time.",
+    "recommended": "Recommended Products 🔥",
+    "viewOffer": "View deal",
+    "freeShipping": "Free shipping"
+  },
+  "typing": {
+    "title": "Tech",
+    "highlight": "Typing Test",
+    "subtitle": "Boost your productivity by training your hands (and brain) reading about AI and Technology.",
+    "time": "Time",
+    "accuracy": "Accuracy",
+    "placeholder": "Start typing the text above here...",
+    "finished": "Test finished!",
+    "tryAgain": "Try again",
+    "equipTitle": "Equipment to Type Faster",
+    "equipDesc": "Low-profile and mechanical keyboards help with finger agility."
+  },
+  "footer": {
+    "tagline": "Your definitive source on Artificial Intelligence, the future of work, and how to prepare for what's coming.",
+    "nav": "Navigation",
+    "about": "About Us",
+    "copyright": "All rights reserved. Some of our content may contain affiliate links from Mercado Libre."
+  },
+  "back": "Back to Home"
+}

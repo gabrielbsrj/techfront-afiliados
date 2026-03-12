@@ -1,30 +1,30 @@
 import Link from "next/link";
 import { Cpu } from "lucide-react";
 
-export default function Footer() {
+export default function Footer({ locale, dict }) {
   return (
     <footer className="footer">
       <div className="container">
         <div className="footer-content">
           <div className="footer-brand">
-            <Link href="/" className="logo">
+            <Link href={`/${locale}`} className="logo">
               <Cpu className="text-primary" size={24} />
-              <span className="text-gradient">TechFront</span>
+              <span className="text-gradient">RebekaClaw</span>
             </Link>
-            <p>Sua fonte definitiva sobre Inteligência Artificial, o futuro do trabalho e como se preparar para o que está por vir.</p>
+            <p>{dict.footer.tagline}</p>
           </div>
           <div className="footer-links">
-            <h4>Navegação</h4>
+            <h4>{dict.footer.nav}</h4>
             <ul>
-              <li><Link href="/futuro-da-ia">O Futuro da IA</Link></li>
-              <li><Link href="/produtividade">Produtividade Tech</Link></li>
-              <li><Link href="/reviews">Reviews (Achadinhos)</Link></li>
-              <li><Link href="/sobre">Sobre Nós</Link></li>
+              <li><Link href={`/${locale}/futuro-da-ia`}>{dict.nav.futureAI}</Link></li>
+              <li><Link href={`/${locale}/produtividade`}>{dict.nav.productivity}</Link></li>
+              <li><Link href={`/${locale}/reviews`}>{dict.nav.reviews}</Link></li>
+              <li><Link href={`/${locale}/sobre`}>{dict.footer.about}</Link></li>
             </ul>
           </div>
         </div>
         <div className="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} TechFront. Todos os direitos reservados. Parte de nosso conteúdo pode conter links de afiliados do Mercado Livre.</p>
+          <p>&copy; {new Date().getFullYear()} RebekaClaw. {dict.footer.copyright}</p>
         </div>
       </div>
     </footer>

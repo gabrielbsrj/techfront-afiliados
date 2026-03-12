@@ -1,0 +1,22 @@
+# Dependências
+node_modules/
+.pnp
+.pnp.js
+
+# Build
+.next/
+out/
+build/
+
+# Variáveis de ambiente (NÃO subir para o GitHub!)
+.env
+.env.local
+.env.*.local
+
+# Debug
+npm-debug.log*
+
+# Misc
+.DS_Store
+*.pem
+Thumbs.db
